@@ -1,0 +1,40 @@
+//*------------------------Creating Table-----------------------------*//
+
+
+create table olympic (athelete STRING,age INT,country STRING,year STRING,closing STRING,
+		      sport STRING,gold INT,silver INT,bronze INT,total INT) 
+
+row format delimited fields terminated by ‘\t’ stored as textfile;
+
+//*--------------------------Loading Data----------------------------*//
+
+load data local inpath ‘/home/(data_path)/olympic_data.csv’ into table olympic;
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.1) List the total number of medals won by each each country in swimming.
+
+	SELECT country,SUM(total) from olympic where sport == "Swimming" GROUP BY country;
+					   		   (=)
+
+
+Q.2) Display real life number of medals India won year wise.
+
+	SELECT year,SUM(total) from olympic where country == "India" GROUP BY year;
+							  (=)
+
+
+Q.3) Find the total number of medals each country won display the name along with total medals.
+
+	 SELECT country,SUM(total) from olympic GROUP BY country;
+
+
+Q.4) Find the real life numbe of gold medals each country won.
+
+	SELECT country,SUM(gold) from olympic GROUP BY country;
+
+
+Q.5) Which country got medals for Shooting, year wise classification?
+
+	SELECT country,year from olympic where sport == "Shooting" GROUP BY year,country;
+						     (=)

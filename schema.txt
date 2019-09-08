@@ -1,0 +1,11 @@
+ColumnNO.	Name		Example			DataType
+Column1:	Athlete Name	Michael Phelps		STRING
+Column2: 	Age		23			INT
+Column3:	Country		United States		STRING
+Column4:	Year		2008			INT
+Column5:	Closing Date	8/24/2008		STRING
+Column6:	Sport		Swimming		STRING
+Column7:	Gold Medals	8			INT
+Column8:	Silver Medals	0			INT
+Column9:	Bronze Medals	0			INT
+Column10:	Total Medals	8			INT
