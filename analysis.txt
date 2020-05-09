@@ -4,11 +4,11 @@
 create table olympic (athelete STRING,age INT,country STRING,year STRING,closing STRING,
 		      sport STRING,gold INT,silver INT,bronze INT,total INT) 
 
-row format delimited fields terminated by ‘\t’ stored as textfile;
+row format delimited fields terminated by â€˜\tâ€™ stored as textfile;
 
 //*--------------------------Loading Data----------------------------*//
 
-load data local inpath ‘/home/(data_path)/olympic_data.csv’ into table olympic;
+load data local inpath â€˜/home/(data_path)/olympic_data.csvâ€™ into table olympic;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -29,9 +29,11 @@ Q.3) Find the total number of medals each country won display the name along wit
 	 SELECT country,SUM(total) from olympic GROUP BY country;
 
 
-Q.4) Find the real life numbe of gold medals each country won.
+Q.4) Find the real life number of gold medals each country won.
 
 	SELECT country,SUM(gold) from olympic GROUP BY country;
+       
+((((((You can similarly find silver medalists and bronze medalists))))))
 
 
 Q.5) Which country got medals for Shooting, year wise classification?
